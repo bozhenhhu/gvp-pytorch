@@ -76,6 +76,7 @@ dataloader = lambda x: torch_geometric.data.DataLoader(x,
                         num_workers=args.num_workers,
                         batch_size=1)
 
+
 def main():
     
     model = gvp.models.CPDModel((6, 3), node_dim, (32, 1), edge_dim).to(device)

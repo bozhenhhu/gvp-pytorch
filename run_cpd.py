@@ -72,6 +72,9 @@ dataloader = lambda x: torch_geometric.data.DataLoader(x,
                         num_workers=args.num_workers,
                         batch_sampler=gvp.data.BatchSampler(
                             x.node_counts, max_nodes=args.max_nodes))
+# dataloader = lambda x: torch_geometric.data.DataLoader(x, 
+#                         num_workers=args.num_workers,
+#                         batch_size=1)
 
 def main():
     
@@ -117,32 +120,33 @@ def train(model, trainset, valset, testset):
     lookup = train_loader.dataset.num_to_letter
     for epoch in range(args.epochs):
         model.train()
-        loss, acc, confusion = loop(model, train_loader, optimizer=optimizer)
+        loss, acc, confusion = loop(model, train_loader, optimizer=optimizer, name="train")
         print(f'EPOCH {epoch} TRAIN loss: {loss:.4f} acc: {acc:.4f}')
         # if epoch % 5 == 0: #reduce training time
         path = f"{args.models_dir}/{model_id}_{epoch}.pt"
-        torch.save(model.state_dict(), path)
+        # torch.save(model.state_dict(), path)
         # print_confusion(confusion, lookup=lookup)
         wandb.log({"epoch":epoch,
-                    "training_loss":loss,
-                    "train_acc":acc})
+                    "train_epoch_loss":loss,
+                    "train_epoch_acc":acc})
         model.eval()
         with torch.no_grad():
-            loss, acc, confusion = loop(model, val_loader)    
+            loss, acc, confusion = loop(model, val_loader, name="val")    
         print(f'EPOCH {epoch} VAL loss: {loss:.4f} acc: {acc:.4f}')
         # print_confusion(confusion, lookup=lookup)
-        wandb.log({"val_loss":loss,
-                    "val_acc":acc})
+        wandb.log({"val_epoch_loss":loss,
+                    "val_epoch_acc":acc})
         if loss < best_val:
             best_path, best_val = path, loss
-        print(f'BEST {best_path} VAL loss: {best_val:.4f}')
+            torch.save(model.state_dict(), best_path)
+            print(f'BEST {best_path} VAL loss: {best_val:.4f}')
     
     print(f"TESTING: loading from {best_path}")
     model.load_state_dict(torch.load(best_path))
     
     model.eval()
     with torch.no_grad():
-        loss, acc, confusion = loop(model, test_loader)
+        loss, acc, confusion = loop(model, test_loader, name="test")
     print(f'TEST loss: {loss:.4f} acc: {acc:.4f}')
     wandb.log({"test_loss":loss,
                 "test_acc":acc})
@@ -151,7 +155,7 @@ def train(model, trainset, valset, testset):
 def test_perplexity(model, dataset):
     model.eval()
     with torch.no_grad():
-        loss, acc, confusion = loop(model, dataloader(dataset))
+        loss, acc, confusion = loop(model, dataloader(dataset), name="test")
     print(f'TEST perplexity: {np.exp(loss):.4f}')
     print_confusion(confusion, lookup=dataset.num_to_letter)
 
@@ -172,7 +176,7 @@ def test_recovery(model, dataset):
     recovery = np.median(recovery)
     print(f'TEST recovery: {recovery:.4f}')
     
-def loop(model, dataloader, optimizer=None):
+def loop(model, dataloader, optimizer=None, name='train'):
 
     confusion = np.zeros((20, 20))
     t = tqdm.tqdm(dataloader)
@@ -200,7 +204,11 @@ def loop(model, dataloader, optimizer=None):
         pred = torch.argmax(logits, dim=-1).detach().cpu().numpy()
         true = seq.detach().cpu().numpy()
         total_correct += (pred == true).sum()
-        confusion += confusion_matrix(true, pred, labels=range(20))
+        if name == 'test':
+            confusion += confusion_matrix(true, pred, labels=range(20))
+        else:
+            wandb.log({"{}_step_loss".format(name):(total_loss / total_count),
+                "{}_step_acc".format(name):(total_correct / total_count)})
         t.set_description("%.5f" % float(total_loss/total_count))
         
         torch.cuda.empty_cache()

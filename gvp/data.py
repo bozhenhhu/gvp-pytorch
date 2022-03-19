@@ -162,8 +162,8 @@ class ProteinGraphDataset(data.Dataset):
     
     def _featurize_as_graph(self, protein):
         name = protein['name']
-        top_k = len(protein['seq']) - 1
-        # top_k = self.top_k
+        # top_k = len(protein['seq']) - 1
+        top_k = self.top_k
         with torch.no_grad():
             coords = torch.as_tensor(protein['coords'], 
                                      device=self.device, dtype=torch.float32)   
@@ -175,7 +175,6 @@ class ProteinGraphDataset(data.Dataset):
             
             X_ca = coords[:, 1]
             edge_index = torch_cluster.knn_graph(X_ca, k=top_k)
-            # edge_index = self._full_edge_index(len(protein['seq']))
 
             pos_embeddings = self._positional_embeddings(edge_index)
             E_vectors = X_ca[edge_index[0]] - X_ca[edge_index[1]]

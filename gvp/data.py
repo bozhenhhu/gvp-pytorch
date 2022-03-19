@@ -148,7 +148,8 @@ class ProteinGraphDataset(data.Dataset):
         self.num_positional_embeddings = num_positional_embeddings
         self.device = device
         self.node_counts = [len(e['seq']) for e in data_list]
-        
+        # self.top_k ={e['name']:len(e['seq']) for e in data_list}
+
         self.letter_to_num = {'C': 4, 'D': 3, 'S': 15, 'Q': 5, 'K': 11, 'I': 9,
                        'P': 14, 'T': 16, 'F': 13, 'A': 0, 'G': 7, 'H': 8,
                        'E': 6, 'L': 10, 'R': 1, 'W': 17, 'V': 19, 
@@ -161,6 +162,8 @@ class ProteinGraphDataset(data.Dataset):
     
     def _featurize_as_graph(self, protein):
         name = protein['name']
+        top_k = len(protein['seq']) - 1
+        # top_k = self.top_k
         with torch.no_grad():
             coords = torch.as_tensor(protein['coords'], 
                                      device=self.device, dtype=torch.float32)   
@@ -171,8 +174,9 @@ class ProteinGraphDataset(data.Dataset):
             coords[~mask] = np.inf
             
             X_ca = coords[:, 1]
-            edge_index = torch_cluster.knn_graph(X_ca, k=self.top_k)
-            
+            edge_index = torch_cluster.knn_graph(X_ca, k=top_k)
+            # edge_index = self._full_edge_index(len(protein['seq']))
+
             pos_embeddings = self._positional_embeddings(edge_index)
             E_vectors = X_ca[edge_index[0]] - X_ca[edge_index[1]]
             rbf = _rbf(E_vectors.norm(dim=-1), D_count=self.num_rbf, device=self.device)
@@ -194,6 +198,20 @@ class ProteinGraphDataset(data.Dataset):
                                          edge_s=edge_s, edge_v=edge_v,
                                          edge_index=edge_index, mask=mask)
         return data
+    
+    def _full_edge_index(self, L):
+        # |i-j| <= kmin (connect sequentially adjacent residues)
+        idx = torch.arange(0, L)
+        # idx = torch.reshape(torch.arange(0, L), (1, L))
+        sep = idx[None,:] - idx[:,None]
+        sep = sep.abs()
+        i, j = torch.where(sep > 0)
+        
+        src = L+i
+        tgt = L+j
+
+        edge_index=torch.stack([src,tgt])
+        return edge_index
                                 
     def _dihedrals(self, X, eps=1e-7):
         # From https://github.com/jingraham/neurips19-graph-protein-design

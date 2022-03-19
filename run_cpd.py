@@ -74,15 +74,7 @@ model_id = int(datetime.timestamp(datetime.now()))
 #                             x.node_counts, max_nodes=args.max_nodes))
 dataloader = lambda x: torch_geometric.data.DataLoader(x, 
                         num_workers=args.num_workers,
-<<<<<<< HEAD
                         batch_size=1)
-=======
-                        batch_sampler=gvp.data.BatchSampler(
-                            x.node_counts, max_nodes=args.max_nodes))
-# dataloader = lambda x: torch_geometric.data.DataLoader(x, 
-#                         num_workers=args.num_workers,
-#                         batch_size=1)
->>>>>>> GVP-bz
 
 def main():
     

@@ -1,0 +1,78 @@
+wandb_version: 1
+
+_wandb:
+  desc: null
+  value:
+    cli_version: 0.12.11
+    framework: lightning
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    python_version: 3.7.12
+    start_time: 1647681061
+    t:
+      1:
+      - 1
+      - 5
+      - 9
+      2:
+      - 1
+      - 5
+      - 9
+      3:
+      - 13
+      - 16
+      4: 3.7.12
+      5: 0.12.11
+      8:
+      - 5
+cath_data:
+  desc: null
+  value: ./data/chain_set.jsonl
+cath_splits:
+  desc: null
+  value: ./data/chain_set_splits.json
+epochs:
+  desc: null
+  value: 100
+experiment_name:
+  desc: null
+  value: train0
+max_nodes:
+  desc: null
+  value: 3000
+models_dir:
+  desc: null
+  value: ./models/
+n_samples:
+  desc: null
+  value: 100
+num_workers:
+  desc: null
+  value: 4
+test_p:
+  desc: null
+  value: null
+test_r:
+  desc: null
+  value: null
+train:
+  desc: null
+  value: true
+ts50:
+  desc: null
+  value: ./data/ts50.json
+wandb:
+  desc: null
+  value: true
+wandb_entity:
+  desc: null
+  value: bozhen
+wandb_group:
+  desc: null
+  value: null
+wandb_id:
+  desc: null
+  value: null
+wandb_project:
+  desc: null
+  value: GVP

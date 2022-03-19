@@ -1,0 +1,33 @@
+{
+    "os": "Linux-3.10.0-1127.el7.x86_64-x86_64-with-debian-buster-sid",
+    "python": "3.7.12",
+    "heartbeatAt": "2022-03-19T09:11:03.235738",
+    "startedAt": "2022-03-19T09:11:01.355186",
+    "docker": null,
+    "gpu": "A40",
+    "gpu_count": 4,
+    "cpu_count": 112,
+    "cuda": null,
+    "args": [
+        "--train",
+        "--wandb",
+        "--experiment_name",
+        "train0",
+        "--wandb_project",
+        "GVP",
+        "--wandb_entity",
+        "bozhen"
+    ],
+    "state": "running",
+    "program": "run_cpd.py",
+    "codePath": "run_cpd.py",
+    "git": {
+        "remote": "https://github.com/bozhenhhu/gvp-pytorch.git",
+        "commit": "9d47962b37d5f182b238341aeae0c0b4a12ab6ba"
+    },
+    "email": "hubozhen@westlake.edu.cn",
+    "root": "/root/AI/gvp-pytorch",
+    "host": "bzhu",
+    "username": "root",
+    "executable": "/root/AI/openfold/lib/conda/envs/openfold_venv/bin/python"
+}

@@ -1,0 +1,5 @@
+name: openfold_venv
+channels:
+  - https://levinthal:paradox@conda.graylab.jhu.edu
+  - defaults
+prefix: /opt/anaconda3/envs/openfold_venv

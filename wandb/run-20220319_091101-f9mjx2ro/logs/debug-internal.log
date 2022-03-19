@@ -1,0 +1,811 @@
+2022-03-19 09:11:02,470 INFO    MainThread:51723 [internal.py:wandb_internal():95] W&B internal server running at pid: 51723, started at: 2022-03-19 09:11:02.470459
+2022-03-19 09:11:02,472 INFO    WriterThread:51723 [datastore.py:open_for_write():77] open: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/run-f9mjx2ro.wandb
+2022-03-19 09:11:02,473 DEBUG   SenderThread:51723 [sender.py:send():235] send: header
+2022-03-19 09:11:02,474 DEBUG   SenderThread:51723 [sender.py:send():235] send: run
+2022-03-19 09:11:02,906 INFO    SenderThread:51723 [dir_watcher.py:__init__():169] watching files in: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files
+2022-03-19 09:11:02,906 INFO    SenderThread:51723 [sender.py:_start_run_threads():815] run started: f9mjx2ro with start time 1647681061
+2022-03-19 09:11:02,907 DEBUG   SenderThread:51723 [sender.py:send():235] send: summary
+2022-03-19 09:11:02,907 INFO    SenderThread:51723 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-03-19 09:11:02,909 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: check_version
+2022-03-19 09:11:02,909 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: check_version
+2022-03-19 09:11:03,229 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: run_start
+2022-03-19 09:11:03,235 DEBUG   HandlerThread:51723 [meta.py:__init__():37] meta init
+2022-03-19 09:11:03,235 DEBUG   HandlerThread:51723 [meta.py:__init__():51] meta init done
+2022-03-19 09:11:03,235 DEBUG   HandlerThread:51723 [meta.py:probe():211] probe
+2022-03-19 09:11:03,243 DEBUG   HandlerThread:51723 [meta.py:_setup_git():201] setup git
+2022-03-19 09:11:03,255 DEBUG   HandlerThread:51723 [meta.py:_setup_git():208] setup git done
+2022-03-19 09:11:03,255 DEBUG   HandlerThread:51723 [meta.py:_save_pip():55] save pip
+2022-03-19 09:11:03,255 DEBUG   HandlerThread:51723 [meta.py:_save_pip():69] save pip done
+2022-03-19 09:11:03,255 DEBUG   HandlerThread:51723 [meta.py:_save_conda():76] save conda
+2022-03-19 09:11:03,910 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_created():217] file/dir created: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/wandb-summary.json
+2022-03-19 09:11:03,910 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_created():217] file/dir created: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/requirements.txt
+2022-03-19 09:11:03,910 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_created():217] file/dir created: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/conda-environment.yaml
+2022-03-19 09:11:04,672 DEBUG   HandlerThread:51723 [meta.py:_save_conda():86] save conda done
+2022-03-19 09:11:04,672 DEBUG   HandlerThread:51723 [meta.py:probe():249] probe done
+2022-03-19 09:11:04,718 DEBUG   SenderThread:51723 [sender.py:send():235] send: files
+2022-03-19 09:11:04,718 INFO    SenderThread:51723 [sender.py:_save_file():947] saving file wandb-metadata.json with policy now
+2022-03-19 09:11:04,725 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:11:04,725 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:11:04,909 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/conda-environment.yaml
+2022-03-19 09:11:04,910 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_created():217] file/dir created: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/wandb-metadata.json
+2022-03-19 09:11:04,910 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_created():217] file/dir created: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:11:05,166 DEBUG   SenderThread:51723 [sender.py:send():235] send: telemetry
+2022-03-19 09:11:05,772 INFO    Thread-11 :51723 [upload_job.py:push():137] Uploaded file /tmp/tmpgfjiowe5wandb/3fkrmg62-wandb-metadata.json
+2022-03-19 09:11:06,913 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:11:10,924 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:11:12,929 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:11:14,933 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:11:16,938 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:11:18,944 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:11:20,173 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:11:20,173 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:11:20,949 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:11:22,954 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:11:24,960 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:11:26,965 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:11:28,970 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:11:31,672 DEBUG   SenderThread:51723 [sender.py:send():235] send: stats
+2022-03-19 09:11:31,978 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:11:33,984 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/config.yaml
+2022-03-19 09:11:33,984 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:11:35,552 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:11:35,552 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:11:35,988 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:11:37,991 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:11:39,991 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:11:41,993 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:11:43,994 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:11:45,995 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:11:47,995 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:11:49,996 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:11:50,936 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:11:50,937 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:11:51,997 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:11:53,998 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:11:55,999 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:11:57,999 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:12:00,000 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:12:02,001 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:12:02,108 DEBUG   SenderThread:51723 [sender.py:send():235] send: stats
+2022-03-19 09:12:04,002 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:12:06,003 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:12:06,340 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:12:06,340 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:12:08,003 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:12:10,004 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:12:12,005 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:12:14,006 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:12:16,007 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:12:18,007 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:12:20,008 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:12:21,707 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:12:21,708 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:12:22,009 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:12:24,010 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:12:26,011 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:12:28,011 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:12:30,012 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:12:32,013 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:12:32,509 DEBUG   SenderThread:51723 [sender.py:send():235] send: stats
+2022-03-19 09:12:34,014 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:12:36,015 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:12:37,152 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:12:37,153 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:12:38,016 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:12:40,017 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:12:42,018 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:12:44,018 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:12:46,019 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:12:48,020 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:12:50,021 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:12:52,022 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:12:52,604 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:12:52,604 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:12:54,023 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:12:56,024 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:12:58,025 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:13:00,026 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:13:02,027 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:13:02,911 DEBUG   SenderThread:51723 [sender.py:send():235] send: stats
+2022-03-19 09:13:04,027 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:13:06,028 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:13:08,029 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:13:08,060 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:13:08,061 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:13:10,030 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:13:12,031 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:13:14,032 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:13:16,032 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:13:18,033 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:13:20,034 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:13:22,035 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:13:23,437 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:13:23,437 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:13:24,036 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:13:26,037 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:13:28,038 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:13:30,038 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:13:32,039 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:13:33,295 DEBUG   SenderThread:51723 [sender.py:send():235] send: stats
+2022-03-19 09:13:34,040 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:13:36,041 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:13:38,042 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:13:38,828 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:13:38,828 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:13:40,043 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:13:42,044 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:13:44,045 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:13:46,046 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:13:48,046 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:13:50,047 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:13:52,048 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:13:54,194 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:13:54,194 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:13:55,049 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:13:57,050 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:13:59,051 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:14:01,052 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:14:03,053 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:14:03,701 DEBUG   SenderThread:51723 [sender.py:send():235] send: stats
+2022-03-19 09:14:05,054 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:14:07,055 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:14:09,056 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:14:09,661 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:14:09,661 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:14:11,057 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:14:13,058 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:14:15,059 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:14:17,060 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:14:19,061 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:14:21,062 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:14:23,062 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:14:25,063 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:14:25,071 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:14:25,071 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:14:27,064 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:14:29,065 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:14:31,066 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:14:33,066 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:14:34,095 DEBUG   SenderThread:51723 [sender.py:send():235] send: stats
+2022-03-19 09:14:35,067 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:14:37,068 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:14:39,069 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:14:40,483 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:14:40,484 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:14:41,070 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:14:43,071 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:14:45,072 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:14:47,072 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:14:49,074 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:14:51,075 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:14:53,077 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:14:55,079 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:14:55,942 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:14:55,943 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:14:57,080 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:14:59,081 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:15:01,082 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:15:03,083 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:15:04,501 DEBUG   SenderThread:51723 [sender.py:send():235] send: stats
+2022-03-19 09:15:05,084 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:15:07,085 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:15:09,086 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:15:11,087 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:15:11,362 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:15:11,362 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:15:13,088 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:15:15,089 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:15:17,090 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:15:19,091 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:15:21,091 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:15:23,092 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:15:25,093 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:15:26,771 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:15:26,771 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:15:27,095 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:15:29,095 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:15:31,096 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:15:33,097 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:15:34,925 DEBUG   SenderThread:51723 [sender.py:send():235] send: stats
+2022-03-19 09:15:35,098 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:15:37,099 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:15:39,100 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:15:41,102 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:15:42,249 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:15:42,249 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:15:43,103 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:15:45,105 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:15:47,107 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:15:49,108 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:15:51,109 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:15:53,111 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:15:55,111 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:15:57,112 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:15:57,688 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:15:57,688 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:15:59,113 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:16:01,114 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:16:03,115 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:16:05,116 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:16:05,337 DEBUG   SenderThread:51723 [sender.py:send():235] send: stats
+2022-03-19 09:16:07,117 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:16:09,117 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:16:11,118 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:16:13,094 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:16:13,095 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:16:13,119 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:16:15,120 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:16:17,121 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:16:19,122 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:16:21,123 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:16:23,124 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:16:26,126 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:16:28,127 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:16:28,462 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:16:28,462 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:16:30,128 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:16:32,129 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:16:34,129 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:16:35,726 DEBUG   SenderThread:51723 [sender.py:send():235] send: stats
+2022-03-19 09:16:36,130 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:16:38,131 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:16:40,132 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:16:42,133 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:16:43,837 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:16:43,838 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:16:44,134 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:16:46,135 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:16:48,136 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:16:50,137 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:16:52,138 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:16:54,139 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:16:56,140 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:16:58,140 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:16:59,211 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:16:59,211 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:17:00,141 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:17:02,142 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:17:04,143 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:17:06,135 DEBUG   SenderThread:51723 [sender.py:send():235] send: stats
+2022-03-19 09:17:06,145 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:17:08,146 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:17:10,147 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:17:12,148 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:17:14,149 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:17:14,586 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:17:14,586 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:17:16,150 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:17:18,151 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:17:20,152 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:17:22,153 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:17:24,154 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:17:26,156 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:17:28,156 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:17:29,983 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:17:29,983 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:17:30,157 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:17:32,158 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:17:34,159 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:17:36,160 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:17:36,540 DEBUG   SenderThread:51723 [sender.py:send():235] send: stats
+2022-03-19 09:17:38,161 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:17:40,162 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:17:42,163 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:17:44,164 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:17:45,345 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:17:45,345 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:17:46,164 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:17:48,165 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:17:50,167 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:17:52,167 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:17:54,168 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:17:56,169 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:17:58,170 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:18:00,171 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:18:00,711 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:18:00,712 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:18:02,172 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:18:04,172 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:18:06,173 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:18:06,930 DEBUG   SenderThread:51723 [sender.py:send():235] send: stats
+2022-03-19 09:18:08,175 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:18:10,176 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:18:12,177 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:18:14,178 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:18:16,109 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:18:16,109 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:18:16,179 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:18:18,179 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:18:20,180 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:18:22,181 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:18:24,182 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:18:26,182 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:18:28,183 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:18:30,184 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:18:31,490 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:18:31,490 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:18:32,184 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:18:34,185 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:18:36,186 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:18:37,330 DEBUG   SenderThread:51723 [sender.py:send():235] send: stats
+2022-03-19 09:18:38,186 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:18:40,188 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:18:42,189 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:18:44,189 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:18:46,190 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:18:46,863 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:18:46,863 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:18:48,191 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:18:51,194 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:18:53,197 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:18:55,199 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:18:57,203 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:18:59,206 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:19:01,208 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:19:02,231 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:19:02,231 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:19:03,209 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:19:05,210 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:19:07,211 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:19:07,748 DEBUG   SenderThread:51723 [sender.py:send():235] send: stats
+2022-03-19 09:19:09,212 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:19:11,213 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:19:13,215 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:19:15,216 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:19:17,217 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:19:17,609 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:19:17,609 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:19:19,219 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:19:21,220 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:19:23,221 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:19:25,223 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:19:27,224 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:19:29,226 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:19:31,227 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:19:32,978 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:19:32,979 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:19:33,229 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:19:35,231 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:19:37,233 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:19:38,155 DEBUG   SenderThread:51723 [sender.py:send():235] send: stats
+2022-03-19 09:19:39,234 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:19:41,236 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:19:43,239 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:19:45,240 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:19:47,242 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:19:48,350 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:19:48,351 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:19:49,243 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:19:51,244 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:19:53,245 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:19:55,245 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:19:57,246 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:19:59,248 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:20:01,249 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:20:03,250 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:20:03,713 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:20:03,713 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:20:05,251 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:20:07,252 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:20:08,548 DEBUG   SenderThread:51723 [sender.py:send():235] send: stats
+2022-03-19 09:20:09,252 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:20:11,253 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:20:13,255 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:20:15,256 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:20:17,258 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:20:19,145 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:20:19,146 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:20:19,260 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:20:21,261 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:20:23,262 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:20:25,263 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:20:27,264 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:20:29,266 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:20:31,267 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:20:33,269 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:20:34,602 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:20:34,602 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:20:35,270 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:20:37,273 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:20:38,957 DEBUG   SenderThread:51723 [sender.py:send():235] send: stats
+2022-03-19 09:20:39,275 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:20:41,276 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:20:43,277 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:20:45,278 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:20:47,280 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:20:49,282 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:20:50,140 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:20:50,140 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:20:51,283 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:20:53,284 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:20:55,285 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:20:57,288 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:20:59,290 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:21:01,294 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:21:03,296 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:21:05,297 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:21:05,613 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:21:05,613 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:21:08,300 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:21:09,365 DEBUG   SenderThread:51723 [sender.py:send():235] send: stats
+2022-03-19 09:21:10,302 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:21:12,303 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:21:14,305 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:21:16,309 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:21:18,310 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:21:20,311 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:21:21,034 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:21:21,034 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:21:22,312 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:21:24,313 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:21:26,314 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:21:28,315 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:21:30,318 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:21:32,319 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:21:34,320 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:21:36,321 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:21:36,442 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:21:36,443 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:21:38,322 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:21:39,765 DEBUG   SenderThread:51723 [sender.py:send():235] send: stats
+2022-03-19 09:21:40,322 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:21:42,323 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:21:44,324 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:21:46,325 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:21:48,325 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:21:50,326 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:21:50,463 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: partial_history
+2022-03-19 09:21:50,464 DEBUG   SenderThread:51723 [sender.py:send():235] send: history
+2022-03-19 09:21:50,465 DEBUG   SenderThread:51723 [sender.py:send():235] send: summary
+2022-03-19 09:21:50,465 INFO    SenderThread:51723 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-03-19 09:21:51,326 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/wandb-summary.json
+2022-03-19 09:21:51,821 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:21:51,821 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:21:52,327 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:21:53,327 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:21:54,328 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:21:56,329 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:21:58,329 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:21:59,376 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: partial_history
+2022-03-19 09:21:59,377 DEBUG   SenderThread:51723 [sender.py:send():235] send: history
+2022-03-19 09:21:59,378 DEBUG   SenderThread:51723 [sender.py:send():235] send: summary
+2022-03-19 09:21:59,378 INFO    SenderThread:51723 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-03-19 09:22:00,330 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/wandb-summary.json
+2022-03-19 09:22:00,331 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:22:01,331 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:22:02,331 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:22:04,332 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:22:06,333 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:22:07,246 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:22:07,246 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:22:08,334 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:22:10,151 DEBUG   SenderThread:51723 [sender.py:send():235] send: stats
+2022-03-19 09:22:10,335 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:22:12,336 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:22:14,337 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:22:16,338 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:22:18,338 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:22:20,340 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:22:22,341 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:22:22,618 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:22:22,619 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:22:24,343 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:22:26,344 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:22:28,345 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:22:30,347 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:22:32,349 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:22:34,350 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:22:36,352 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:22:37,993 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:22:37,994 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:22:38,353 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:22:40,354 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:22:40,554 DEBUG   SenderThread:51723 [sender.py:send():235] send: stats
+2022-03-19 09:22:42,355 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:22:44,357 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:22:46,358 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:22:48,359 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:22:50,360 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:22:52,363 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:22:53,704 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:22:53,705 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:22:54,364 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:22:56,366 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:22:58,368 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:23:00,369 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:23:02,370 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:23:04,370 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:23:06,371 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:23:08,372 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:23:09,123 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:23:09,124 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:23:10,372 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:23:10,956 DEBUG   SenderThread:51723 [sender.py:send():235] send: stats
+2022-03-19 09:23:12,373 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:23:14,374 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:23:16,375 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:23:18,376 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:23:20,377 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:23:22,378 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:23:24,379 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:23:24,542 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:23:24,542 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:23:26,379 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:23:28,380 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:23:30,381 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:23:32,381 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:23:35,383 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:23:37,384 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:23:39,386 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:23:39,923 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:23:39,923 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:23:41,327 DEBUG   SenderThread:51723 [sender.py:send():235] send: stats
+2022-03-19 09:23:41,387 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:23:43,387 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:23:45,388 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:23:47,389 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:23:49,390 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:23:51,390 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:23:53,391 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:23:55,309 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:23:55,309 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:23:55,392 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:23:57,393 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:23:59,394 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:24:01,394 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:24:03,395 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:24:05,396 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:24:07,397 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:24:09,398 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:24:10,683 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:24:10,683 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:24:11,399 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:24:11,728 DEBUG   SenderThread:51723 [sender.py:send():235] send: stats
+2022-03-19 09:24:13,401 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:24:15,403 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:24:17,406 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:24:19,407 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:24:21,409 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:24:23,411 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:24:25,413 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:24:26,121 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:24:26,121 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:24:27,415 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:24:29,416 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:24:31,419 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:24:33,420 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:24:35,422 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:24:37,423 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:24:39,424 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:24:41,425 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:24:41,477 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:24:41,478 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:24:42,143 DEBUG   SenderThread:51723 [sender.py:send():235] send: stats
+2022-03-19 09:24:43,426 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:24:45,428 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:24:47,430 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:24:49,431 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:24:51,433 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:24:53,434 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:24:55,435 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:24:57,004 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:24:57,004 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:24:57,436 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:24:59,437 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:25:01,438 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:25:03,438 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:25:05,440 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:25:07,441 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:25:09,443 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:25:11,444 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:25:12,479 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:25:12,479 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:25:12,854 DEBUG   SenderThread:51723 [sender.py:send():235] send: stats
+2022-03-19 09:25:13,445 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:25:15,447 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:25:17,448 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:25:19,449 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:25:21,450 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:25:23,451 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:25:25,451 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:25:27,452 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:25:27,855 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:25:27,855 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:25:29,453 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:25:31,453 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:25:33,454 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:25:35,455 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:25:37,457 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:25:39,458 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:25:41,460 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:25:42,934 DEBUG   SenderThread:51723 [sender.py:send():235] send: stats
+2022-03-19 09:25:43,354 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:25:43,354 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:25:43,462 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:25:45,463 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:25:47,464 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:25:49,466 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:25:51,467 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:25:53,469 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:25:55,471 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:25:57,472 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:25:58,821 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:25:58,822 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:25:59,473 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:26:01,474 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:26:03,476 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:26:05,477 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:26:07,477 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:26:09,478 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:26:11,480 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:26:13,351 DEBUG   SenderThread:51723 [sender.py:send():235] send: stats
+2022-03-19 09:26:13,481 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:26:14,254 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:26:14,254 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:26:15,482 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:26:17,483 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:26:19,487 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:26:21,491 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:26:23,493 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:26:25,497 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:26:28,498 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:26:29,630 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:26:29,630 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:26:30,499 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:26:32,500 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:26:34,500 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:26:36,501 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:26:38,502 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:26:40,503 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:26:42,503 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:26:43,772 DEBUG   SenderThread:51723 [sender.py:send():235] send: stats
+2022-03-19 09:26:44,504 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:26:45,006 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: stop_status
+2022-03-19 09:26:45,007 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: stop_status
+2022-03-19 09:26:46,505 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:26:48,505 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:26:50,506 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:26:52,507 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:26:54,508 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:26:56,508 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:26:57,764 WARNING MainThread:51723 [internal.py:wandb_internal():155] Internal process interrupt: 1
+2022-03-19 09:26:57,993 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: partial_history
+2022-03-19 09:26:57,993 DEBUG   SenderThread:51723 [sender.py:send():235] send: telemetry
+2022-03-19 09:26:58,509 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:27:00,454 DEBUG   SenderThread:51723 [sender.py:send():235] send: exit
+2022-03-19 09:27:00,455 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: poll_exit
+2022-03-19 09:27:00,455 INFO    SenderThread:51723 [sender.py:send_exit():371] handling exit code: 255
+2022-03-19 09:27:00,455 INFO    SenderThread:51723 [sender.py:send_exit():373] handling runtime: 957
+2022-03-19 09:27:00,456 INFO    SenderThread:51723 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-03-19 09:27:00,456 INFO    SenderThread:51723 [sender.py:send_exit():379] send defer
+2022-03-19 09:27:00,456 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: poll_exit
+2022-03-19 09:27:00,457 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: defer
+2022-03-19 09:27:00,457 INFO    HandlerThread:51723 [handler.py:handle_request_defer():164] handle defer: 0
+2022-03-19 09:27:00,457 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: defer
+2022-03-19 09:27:00,457 INFO    SenderThread:51723 [sender.py:send_request_defer():388] handle sender defer: 0
+2022-03-19 09:27:00,457 INFO    SenderThread:51723 [sender.py:transition_state():392] send defer: 1
+2022-03-19 09:27:00,457 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: defer
+2022-03-19 09:27:00,457 INFO    HandlerThread:51723 [handler.py:handle_request_defer():164] handle defer: 1
+2022-03-19 09:27:00,488 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: defer
+2022-03-19 09:27:00,489 INFO    SenderThread:51723 [sender.py:send_request_defer():388] handle sender defer: 1
+2022-03-19 09:27:00,489 INFO    SenderThread:51723 [sender.py:transition_state():392] send defer: 2
+2022-03-19 09:27:00,489 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: defer
+2022-03-19 09:27:00,489 DEBUG   SenderThread:51723 [sender.py:send():235] send: stats
+2022-03-19 09:27:00,489 INFO    HandlerThread:51723 [handler.py:handle_request_defer():164] handle defer: 2
+2022-03-19 09:27:00,490 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: defer
+2022-03-19 09:27:00,490 INFO    SenderThread:51723 [sender.py:send_request_defer():388] handle sender defer: 2
+2022-03-19 09:27:00,490 INFO    SenderThread:51723 [sender.py:transition_state():392] send defer: 3
+2022-03-19 09:27:00,490 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: defer
+2022-03-19 09:27:00,490 INFO    HandlerThread:51723 [handler.py:handle_request_defer():164] handle defer: 3
+2022-03-19 09:27:00,490 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: defer
+2022-03-19 09:27:00,490 INFO    SenderThread:51723 [sender.py:send_request_defer():388] handle sender defer: 3
+2022-03-19 09:27:00,490 INFO    SenderThread:51723 [sender.py:transition_state():392] send defer: 4
+2022-03-19 09:27:00,490 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: defer
+2022-03-19 09:27:00,491 INFO    HandlerThread:51723 [handler.py:handle_request_defer():164] handle defer: 4
+2022-03-19 09:27:00,491 DEBUG   SenderThread:51723 [sender.py:send():235] send: summary
+2022-03-19 09:27:00,491 INFO    SenderThread:51723 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-03-19 09:27:00,491 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: defer
+2022-03-19 09:27:00,491 INFO    SenderThread:51723 [sender.py:send_request_defer():388] handle sender defer: 4
+2022-03-19 09:27:00,491 INFO    SenderThread:51723 [sender.py:transition_state():392] send defer: 5
+2022-03-19 09:27:00,492 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: defer
+2022-03-19 09:27:00,492 INFO    HandlerThread:51723 [handler.py:handle_request_defer():164] handle defer: 5
+2022-03-19 09:27:00,492 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: defer
+2022-03-19 09:27:00,492 INFO    SenderThread:51723 [sender.py:send_request_defer():388] handle sender defer: 5
+2022-03-19 09:27:00,510 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/wandb-summary.json
+2022-03-19 09:27:00,510 INFO    Thread-7  :51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:27:00,557 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: poll_exit
+2022-03-19 09:27:00,892 INFO    SenderThread:51723 [sender.py:transition_state():392] send defer: 6
+2022-03-19 09:27:00,892 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: poll_exit
+2022-03-19 09:27:00,892 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: defer
+2022-03-19 09:27:00,893 INFO    HandlerThread:51723 [handler.py:handle_request_defer():164] handle defer: 6
+2022-03-19 09:27:00,893 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: defer
+2022-03-19 09:27:00,893 INFO    SenderThread:51723 [sender.py:send_request_defer():388] handle sender defer: 6
+2022-03-19 09:27:00,893 INFO    SenderThread:51723 [dir_watcher.py:finish():283] shutting down directory watcher
+2022-03-19 09:27:00,993 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: poll_exit
+2022-03-19 09:27:01,511 INFO    SenderThread:51723 [dir_watcher.py:_on_file_modified():230] file/dir modified: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/config.yaml
+2022-03-19 09:27:01,511 INFO    SenderThread:51723 [dir_watcher.py:finish():313] scan: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files
+2022-03-19 09:27:01,511 INFO    SenderThread:51723 [dir_watcher.py:finish():327] scan save: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/config.yaml config.yaml
+2022-03-19 09:27:01,511 INFO    SenderThread:51723 [dir_watcher.py:finish():327] scan save: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/wandb-summary.json wandb-summary.json
+2022-03-19 09:27:01,512 INFO    SenderThread:51723 [dir_watcher.py:finish():327] scan save: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/requirements.txt requirements.txt
+2022-03-19 09:27:01,518 INFO    SenderThread:51723 [dir_watcher.py:finish():327] scan save: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/conda-environment.yaml conda-environment.yaml
+2022-03-19 09:27:01,519 INFO    SenderThread:51723 [dir_watcher.py:finish():327] scan save: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/wandb-metadata.json wandb-metadata.json
+2022-03-19 09:27:01,523 INFO    SenderThread:51723 [dir_watcher.py:finish():327] scan save: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log output.log
+2022-03-19 09:27:01,526 INFO    SenderThread:51723 [sender.py:transition_state():392] send defer: 7
+2022-03-19 09:27:01,526 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: poll_exit
+2022-03-19 09:27:01,527 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: defer
+2022-03-19 09:27:01,527 INFO    HandlerThread:51723 [handler.py:handle_request_defer():164] handle defer: 7
+2022-03-19 09:27:01,530 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: defer
+2022-03-19 09:27:01,531 INFO    SenderThread:51723 [sender.py:send_request_defer():388] handle sender defer: 7
+2022-03-19 09:27:01,531 INFO    SenderThread:51723 [file_pusher.py:finish():145] shutting down file pusher
+2022-03-19 09:27:01,628 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: poll_exit
+2022-03-19 09:27:01,628 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: poll_exit
+2022-03-19 09:27:01,729 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: poll_exit
+2022-03-19 09:27:01,729 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: poll_exit
+2022-03-19 09:27:01,830 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: poll_exit
+2022-03-19 09:27:01,830 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: poll_exit
+2022-03-19 09:27:01,931 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: poll_exit
+2022-03-19 09:27:01,931 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: poll_exit
+2022-03-19 09:27:02,032 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: poll_exit
+2022-03-19 09:27:02,032 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: poll_exit
+2022-03-19 09:27:02,133 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: poll_exit
+2022-03-19 09:27:02,133 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: poll_exit
+2022-03-19 09:27:02,234 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: poll_exit
+2022-03-19 09:27:02,234 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: poll_exit
+2022-03-19 09:27:02,335 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: poll_exit
+2022-03-19 09:27:02,335 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: poll_exit
+2022-03-19 09:27:02,436 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: poll_exit
+2022-03-19 09:27:02,436 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: poll_exit
+2022-03-19 09:27:02,537 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: poll_exit
+2022-03-19 09:27:02,537 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: poll_exit
+2022-03-19 09:27:02,638 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: poll_exit
+2022-03-19 09:27:02,638 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: poll_exit
+2022-03-19 09:27:02,739 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: poll_exit
+2022-03-19 09:27:02,739 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: poll_exit
+2022-03-19 09:27:02,840 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: poll_exit
+2022-03-19 09:27:02,840 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: poll_exit
+2022-03-19 09:27:02,941 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: poll_exit
+2022-03-19 09:27:02,942 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: poll_exit
+2022-03-19 09:27:03,043 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: poll_exit
+2022-03-19 09:27:03,043 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: poll_exit
+2022-03-19 09:27:03,127 INFO    Thread-14 :51723 [upload_job.py:push():137] Uploaded file /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/requirements.txt
+2022-03-19 09:27:03,144 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: poll_exit
+2022-03-19 09:27:03,144 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: poll_exit
+2022-03-19 09:27:03,153 INFO    Thread-16 :51723 [upload_job.py:push():137] Uploaded file /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/output.log
+2022-03-19 09:27:03,166 INFO    Thread-13 :51723 [upload_job.py:push():137] Uploaded file /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/wandb-summary.json
+2022-03-19 09:27:03,172 INFO    Thread-15 :51723 [upload_job.py:push():137] Uploaded file /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/conda-environment.yaml
+2022-03-19 09:27:03,203 INFO    Thread-12 :51723 [upload_job.py:push():137] Uploaded file /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/files/config.yaml
+2022-03-19 09:27:03,245 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: poll_exit
+2022-03-19 09:27:03,245 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: poll_exit
+2022-03-19 09:27:03,346 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: poll_exit
+2022-03-19 09:27:03,346 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: poll_exit
+2022-03-19 09:27:03,403 INFO    Thread-6  :51723 [sender.py:transition_state():392] send defer: 8
+2022-03-19 09:27:03,404 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: defer
+2022-03-19 09:27:03,404 INFO    HandlerThread:51723 [handler.py:handle_request_defer():164] handle defer: 8
+2022-03-19 09:27:03,404 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: defer
+2022-03-19 09:27:03,404 INFO    SenderThread:51723 [sender.py:send_request_defer():388] handle sender defer: 8
+2022-03-19 09:27:03,447 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: poll_exit
+2022-03-19 09:27:04,459 INFO    SenderThread:51723 [sender.py:transition_state():392] send defer: 9
+2022-03-19 09:27:04,459 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: poll_exit
+2022-03-19 09:27:04,459 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: defer
+2022-03-19 09:27:04,460 INFO    HandlerThread:51723 [handler.py:handle_request_defer():164] handle defer: 9
+2022-03-19 09:27:04,460 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: defer
+2022-03-19 09:27:04,460 INFO    SenderThread:51723 [sender.py:send_request_defer():388] handle sender defer: 9
+2022-03-19 09:27:04,460 INFO    SenderThread:51723 [sender.py:transition_state():392] send defer: 10
+2022-03-19 09:27:04,460 DEBUG   SenderThread:51723 [sender.py:send():235] send: final
+2022-03-19 09:27:04,460 DEBUG   SenderThread:51723 [sender.py:send():235] send: footer
+2022-03-19 09:27:04,461 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: defer
+2022-03-19 09:27:04,461 INFO    HandlerThread:51723 [handler.py:handle_request_defer():164] handle defer: 10
+2022-03-19 09:27:04,461 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: defer
+2022-03-19 09:27:04,461 INFO    SenderThread:51723 [sender.py:send_request_defer():388] handle sender defer: 10
+2022-03-19 09:27:04,560 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: poll_exit
+2022-03-19 09:27:04,561 DEBUG   SenderThread:51723 [sender.py:send_request():249] send_request: poll_exit
+2022-03-19 09:27:04,561 INFO    SenderThread:51723 [file_pusher.py:join():150] waiting for file pusher
+2022-03-19 09:27:05,404 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: sampled_history
+2022-03-19 09:27:05,405 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: get_summary
+2022-03-19 09:27:05,406 DEBUG   HandlerThread:51723 [handler.py:handle_request():141] handle_request: shutdown
+2022-03-19 09:27:05,406 INFO    HandlerThread:51723 [handler.py:finish():778] shutting down handler
+2022-03-19 09:27:05,461 INFO    WriterThread:51723 [datastore.py:close():281] close: /root/AI/gvp-pytorch/wandb/run-20220319_091101-f9mjx2ro/run-f9mjx2ro.wandb
+2022-03-19 09:27:06,304 INFO    SenderThread:51723 [sender.py:finish():1078] shutting down sender
+2022-03-19 09:27:06,304 INFO    SenderThread:51723 [file_pusher.py:finish():145] shutting down file pusher
+2022-03-19 09:27:06,304 INFO    SenderThread:51723 [file_pusher.py:join():150] waiting for file pusher
+2022-03-19 09:27:06,306 INFO    MainThread:51723 [internal.py:handle_exit():82] Internal process exited

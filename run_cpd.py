@@ -1,5 +1,7 @@
 import argparse
 
+import wandb
+
 parser = argparse.ArgumentParser()
 parser.add_argument('--models-dir', metavar='PATH', default='./models/',
                     help='directory to save trained models, default=./models/')
@@ -23,7 +25,29 @@ parser.add_argument('--test-p', metavar='PATH', default=None,
 parser.add_argument('--n-samples', metavar='N', default=100,
                     help='number of sequences to sample (if testing recovery), default=100')
 
+
+parser.add_argument(
+        "--wandb", action="store_true", default=False,
+    )
+parser.add_argument(
+    "--experiment_name", type=str, default=None,
+)
+parser.add_argument(
+    "--wandb_id", type=str, default=None,
+)
+parser.add_argument(
+    "--wandb_group", type=str, default=None,
+)
+parser.add_argument(
+    "--wandb_project", type=str, default=None,
+)
+parser.add_argument(
+    "--wandb_entity", type=str, default=None,
+)
+
 args = parser.parse_args()
+config = parser.parse_args().__dict__
+
 assert sum(map(bool, [args.train, args.test_p, args.test_r])) == 1, \
     "Specify exactly one of --train, --test_r, --test_p"
 
@@ -60,6 +84,15 @@ def main():
     trainset, valset, testset = map(gvp.data.ProteinGraphDataset,
                                     (cath.train, cath.val, cath.test))
     
+    if(args.wandb):
+        wandb.init(
+            name=args.experiment_name,
+            project=args.wandb_project,
+            config=config,
+            entity=args.wandb_entity,
+            reinit=True
+        )
+    
     if args.test_r or args.test_p:
         ts50set = gvp.data.ProteinGraphDataset(json.load(open(args.ts50)))
         model.load_state_dict(torch.load(args.test_r or args.test_p))
@@ -85,21 +118,25 @@ def train(model, trainset, valset, testset):
     for epoch in range(args.epochs):
         model.train()
         loss, acc, confusion = loop(model, train_loader, optimizer=optimizer)
+        print(f'EPOCH {epoch} TRAIN loss: {loss:.4f} acc: {acc:.4f}')
+        # if epoch % 5 == 0: #reduce training time
         path = f"{args.models_dir}/{model_id}_{epoch}.pt"
         torch.save(model.state_dict(), path)
-        print(f'EPOCH {epoch} TRAIN loss: {loss:.4f} acc: {acc:.4f}')
-        print_confusion(confusion, lookup=lookup)
-        
+        # print_confusion(confusion, lookup=lookup)
+        wandb.log({"epoch":epoch,
+                    "training_loss":loss,
+                    "train_acc":acc})
         model.eval()
         with torch.no_grad():
             loss, acc, confusion = loop(model, val_loader)    
         print(f'EPOCH {epoch} VAL loss: {loss:.4f} acc: {acc:.4f}')
-        print_confusion(confusion, lookup=lookup)
-        
+        # print_confusion(confusion, lookup=lookup)
+        wandb.log({"val_loss":loss,
+                    "val_acc":acc})
         if loss < best_val:
             best_path, best_val = path, loss
         print(f'BEST {best_path} VAL loss: {best_val:.4f}')
-        
+    
     print(f"TESTING: loading from {best_path}")
     model.load_state_dict(torch.load(best_path))
     
@@ -107,6 +144,8 @@ def train(model, trainset, valset, testset):
     with torch.no_grad():
         loss, acc, confusion = loop(model, test_loader)
     print(f'TEST loss: {loss:.4f} acc: {acc:.4f}')
+    wandb.log({"test_loss":loss,
+                "test_acc":acc})
     print_confusion(confusion,lookup=lookup)
 
 def test_perplexity(model, dataset):

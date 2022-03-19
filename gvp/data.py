@@ -143,11 +143,12 @@ class ProteinGraphDataset(data.Dataset):
         super(ProteinGraphDataset, self).__init__()
         
         self.data_list = data_list
-        self.top_k = top_k
+        # self.top_k = top_k
         self.num_rbf = num_rbf
         self.num_positional_embeddings = num_positional_embeddings
         self.device = device
         self.node_counts = [len(e['seq']) for e in data_list]
+        self.top_k ={e['name']:len(e['seq']) for e in data_list}
         
         self.letter_to_num = {'C': 4, 'D': 3, 'S': 15, 'Q': 5, 'K': 11, 'I': 9,
                        'P': 14, 'T': 16, 'F': 13, 'A': 0, 'G': 7, 'H': 8,

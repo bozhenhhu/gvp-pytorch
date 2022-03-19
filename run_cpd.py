@@ -1,4 +1,5 @@
 import argparse
+from re import T
 
 import wandb
 
@@ -142,7 +143,7 @@ def train(model, trainset, valset, testset):
     
     model.eval()
     with torch.no_grad():
-        loss, acc, confusion = loop(model, test_loader)
+        loss, acc, confusion = loop(model, test_loader, test=True)
     print(f'TEST loss: {loss:.4f} acc: {acc:.4f}')
     wandb.log({"test_loss":loss,
                 "test_acc":acc})
@@ -151,7 +152,7 @@ def train(model, trainset, valset, testset):
 def test_perplexity(model, dataset):
     model.eval()
     with torch.no_grad():
-        loss, acc, confusion = loop(model, dataloader(dataset))
+        loss, acc, confusion = loop(model, dataloader(dataset), test=True)
     print(f'TEST perplexity: {np.exp(loss):.4f}')
     print_confusion(confusion, lookup=dataset.num_to_letter)
 
@@ -172,7 +173,7 @@ def test_recovery(model, dataset):
     recovery = np.median(recovery)
     print(f'TEST recovery: {recovery:.4f}')
     
-def loop(model, dataloader, optimizer=None):
+def loop(model, dataloader, optimizer=None, test=False):
 
     confusion = np.zeros((20, 20))
     t = tqdm.tqdm(dataloader)
@@ -200,7 +201,8 @@ def loop(model, dataloader, optimizer=None):
         pred = torch.argmax(logits, dim=-1).detach().cpu().numpy()
         true = seq.detach().cpu().numpy()
         total_correct += (pred == true).sum()
-        confusion += confusion_matrix(true, pred, labels=range(20))
+        if test:
+            confusion += confusion_matrix(true, pred, labels=range(20))
         t.set_description("%.5f" % float(total_loss/total_count))
         
         torch.cuda.empty_cache()

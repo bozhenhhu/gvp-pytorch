@@ -68,10 +68,13 @@ device = "cuda" if torch.cuda.is_available() else "cpu"
 
 if not os.path.exists(args.models_dir): os.makedirs(args.models_dir)
 model_id = int(datetime.timestamp(datetime.now()))
+# dataloader = lambda x: torch_geometric.data.DataLoader(x, 
+#                         num_workers=args.num_workers,
+#                         batch_sampler=gvp.data.BatchSampler(
+#                             x.node_counts, max_nodes=args.max_nodes))
 dataloader = lambda x: torch_geometric.data.DataLoader(x, 
                         num_workers=args.num_workers,
-                        batch_sampler=gvp.data.BatchSampler(
-                            x.node_counts, max_nodes=args.max_nodes))
+                        batch_size=1)
 
 def main():
     

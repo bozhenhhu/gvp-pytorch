@@ -31,6 +31,16 @@ def _rbf(D, D_min=0., D_max=20., D_count=16, device='cpu'):
     RBF = torch.exp(-((D_expand - D_mu) / D_sigma) ** 2)
     return RBF
 
+def _t_continuity(D, D_min=0., D_max=20., D_count=16, device='cpu', v=100):
+    D_mu = torch.linspace(D_min, D_max, D_count, device=device)
+    D_mu = D_mu.view([1, -1])
+    D_sigma = (D_max - D_min) / D_count
+    D_expand = torch.unsqueeze(D, -1) 
+    D_expand = (D_expand - D_mu)** 2 / (D_sigma * v)
+    P = torch.power((1 + D_expand ),
+                -1 * (v + 1)
+            )
+    return P
 
 class CATHDataset:
     '''
@@ -138,7 +148,7 @@ class ProteinGraphDataset(data.Dataset):
     '''
     def __init__(self, data_list, 
                  num_positional_embeddings=16,
-                 top_k=30, num_rbf=16, device="cpu"):
+                 top_k=30, num_rbf=16, device="cpu", v=100):
         
         super(ProteinGraphDataset, self).__init__()
         
@@ -149,6 +159,7 @@ class ProteinGraphDataset(data.Dataset):
         self.device = device
         self.node_counts = [len(e['seq']) for e in data_list]
         # self.top_k ={e['name']:len(e['seq']) for e in data_list}
+        self.v = v
 
         self.letter_to_num = {'C': 4, 'D': 3, 'S': 15, 'Q': 5, 'K': 11, 'I': 9,
                        'P': 14, 'T': 16, 'F': 13, 'A': 0, 'G': 7, 'H': 8,
@@ -178,8 +189,9 @@ class ProteinGraphDataset(data.Dataset):
 
             pos_embeddings = self._positional_embeddings(edge_index)
             E_vectors = X_ca[edge_index[0]] - X_ca[edge_index[1]]
-            rbf = _rbf(E_vectors.norm(dim=-1), D_count=self.num_rbf, device=self.device)
-            
+            # rbf = _rbf(E_vectors.norm(dim=-1), D_count=self.num_rbf, device=self.device)
+            rbf = _t_continuity(E_vectors.norm(dim=-1), D_count=self.num_rbf, device=self.device, v=self.v)
+
             dihedrals = self._dihedrals(coords)                     
             orientations = self._orientations(X_ca)
             sidechains = self._sidechains(coords)

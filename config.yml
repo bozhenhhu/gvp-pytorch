@@ -19,6 +19,6 @@ tuner:
     #choice: maximize, minimize
     optimize_mode: minimize
 trial:
-  command: CUDA_VISIBLE_DEVICES=1 run_cpd.py
+  command: CUDA_VISIBLE_DEVICES=1 python run_cpd.py
   codeDir: .
   gpuNum: 1

@@ -23,6 +23,7 @@ def _rbf(D, D_min=0., D_max=20., D_count=16, device='cpu'):
     That is, if `D` has shape [...dims], then the returned tensor will have
     shape [...dims, D_count].
     '''
+    # print('rbf')
     D_mu = torch.linspace(D_min, D_max, D_count, device=device)
     D_mu = D_mu.view([1, -1])
     D_sigma = (D_max - D_min) / D_count
@@ -32,12 +33,13 @@ def _rbf(D, D_min=0., D_max=20., D_count=16, device='cpu'):
     return RBF
 
 def _t_continuity(D, D_min=0., D_max=20., D_count=16, device='cpu', v=100):
+    print('v')
     D_mu = torch.linspace(D_min, D_max, D_count, device=device)
     D_mu = D_mu.view([1, -1])
     D_sigma = (D_max - D_min) / D_count
     D_expand = torch.unsqueeze(D, -1) 
-    D_expand = (D_expand - D_mu)** 2 / (D_sigma * v)
-    P = torch.power((1 + D_expand ),
+    D_expand = (D_expand - D_mu) / (D_sigma * v)
+    P = torch.pow((1 + D_expand ),
                 -1 * (v + 1)
             )
     return P
@@ -189,8 +191,8 @@ class ProteinGraphDataset(data.Dataset):
 
             pos_embeddings = self._positional_embeddings(edge_index)
             E_vectors = X_ca[edge_index[0]] - X_ca[edge_index[1]]
-            # rbf = _rbf(E_vectors.norm(dim=-1), D_count=self.num_rbf, device=self.device)
-            rbf = _t_continuity(E_vectors.norm(dim=-1), D_count=self.num_rbf, device=self.device, v=self.v)
+            rbf = _rbf(E_vectors.norm(dim=-1), D_count=self.num_rbf, device=self.device)
+            # rbf = _t_continuity(E_vectors.norm(dim=-1), D_count=self.num_rbf, device=self.device, v=self.v)
 
             dihedrals = self._dihedrals(coords)                     
             orientations = self._orientations(X_ca)

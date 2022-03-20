@@ -17,7 +17,7 @@ parser.add_argument('--cath-splits', metavar='PATH', default='./data/chain_set_s
                     help='location of CATH split file, default=./data/chain_set_splits.json')
 parser.add_argument('--ts50', metavar='PATH', default='./data/ts50.json',
                     help='location of TS50 dataset, default=./data/ts50.json')
-parser.add_argument('--train', action="store_true", default=True,
+parser.add_argument('--train', action="store_true", default=False,
                     help="train a model")
 parser.add_argument('--test-r', metavar='PATH', default=None,
                     help='evaluate a trained model on recovery (without training)')

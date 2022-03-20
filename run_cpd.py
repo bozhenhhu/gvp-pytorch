@@ -1,7 +1,7 @@
 import argparse
 
 import wandb
-
+import nni
 parser = argparse.ArgumentParser()
 parser.add_argument('--models-dir', metavar='PATH', default='./models/',
                     help='directory to save trained models, default=./models/')
@@ -9,7 +9,7 @@ parser.add_argument('--num-workers', metavar='N', type=int, default=4,
                    help='number of threads for loading data, default=4')
 parser.add_argument('--max-nodes', metavar='N', type=int, default=3000,
                     help='max number of nodes per batch, default=3000')
-parser.add_argument('--epochs', metavar='N', type=int, default=100,
+parser.add_argument('--epochs', metavar='N', type=int, default=40,
                     help='training epochs, default=100')
 parser.add_argument('--cath-data', metavar='PATH', default='./data/chain_set.jsonl',
                     help='location of CATH dataset, default=./data/chain_set.jsonl')
@@ -17,7 +17,8 @@ parser.add_argument('--cath-splits', metavar='PATH', default='./data/chain_set_s
                     help='location of CATH split file, default=./data/chain_set_splits.json')
 parser.add_argument('--ts50', metavar='PATH', default='./data/ts50.json',
                     help='location of TS50 dataset, default=./data/ts50.json')
-parser.add_argument('--train', action="store_true", help="train a model")
+parser.add_argument('--train', action="store_true", default=True,
+                    help="train a model")
 parser.add_argument('--test-r', metavar='PATH', default=None,
                     help='evaluate a trained model on recovery (without training)')
 parser.add_argument('--test-p', metavar='PATH', default=None,
@@ -45,11 +46,19 @@ parser.add_argument(
     "--wandb_entity", type=str, default=None,
 )
 
+parser.add_argument(
+    "--v", type=int, default=100,
+)
 args = parser.parse_args()
 config = parser.parse_args().__dict__
 
 assert sum(map(bool, [args.train, args.test_p, args.test_r])) == 1, \
     "Specify exactly one of --train, --test_r, --test_p"
+
+tuner_params = nni.get_next_parameter() 
+config.update(tuner_params)
+import argparse
+args = argparse.Namespace(**config)
 
 import torch
 import torch.nn as nn
@@ -84,8 +93,11 @@ def main():
     cath = gvp.data.CATHDataset(path="data/chain_set.jsonl",
                                 splits_path="data/chain_set_splits.json")    
     
-    trainset, valset, testset = map(gvp.data.ProteinGraphDataset,
-                                    (cath.train, cath.val, cath.test))
+    # trainset, valset, testset = map(gvp.data.ProteinGraphDataset,
+    #                                 (cath.train, cath.val, cath.test))
+    trainset = gvp.data.ProteinGraphDataset(cath.train, v=args.v)
+    valset = gvp.data.ProteinGraphDataset(cath.val, v=args.v)
+    testset = gvp.data.ProteinGraphDataset(cath.test, v=args.v)
     
     if(args.wandb):
         wandb.init(
@@ -120,37 +132,41 @@ def train(model, trainset, valset, testset):
     lookup = train_loader.dataset.num_to_letter
     for epoch in range(args.epochs):
         model.train()
-        loss, acc, confusion = loop(model, train_loader, optimizer=optimizer, name="train")
+        loss, acc, _ = loop(model, train_loader, optimizer=optimizer, name="train")
         print(f'EPOCH {epoch} TRAIN loss: {loss:.4f} acc: {acc:.4f}')
         # if epoch % 5 == 0: #reduce training time
         path = f"{args.models_dir}/{model_id}_{epoch}.pt"
         # torch.save(model.state_dict(), path)
         # print_confusion(confusion, lookup=lookup)
-        wandb.log({"epoch":epoch,
-                    "train_epoch_loss":loss,
-                    "train_epoch_acc":acc})
+        if(args.wandb):
+            wandb.log({"epoch":epoch,
+                        "train_epoch_loss":loss,
+                        "train_epoch_acc":acc})
         model.eval()
         with torch.no_grad():
-            loss, acc, confusion = loop(model, val_loader, name="val")    
+            loss, acc, _ = loop(model, val_loader, name="val")    
         print(f'EPOCH {epoch} VAL loss: {loss:.4f} acc: {acc:.4f}')
         # print_confusion(confusion, lookup=lookup)
-        wandb.log({"val_epoch_loss":loss,
-                    "val_epoch_acc":acc})
+        if(args.wandb):
+            wandb.log({"val_epoch_loss":loss,
+                        "val_epoch_acc":acc})
         if loss < best_val:
             best_path, best_val = path, loss
-            torch.save(model.state_dict(), best_path)
+            # torch.save(model.state_dict(), best_path)
             print(f'BEST {best_path} VAL loss: {best_val:.4f}')
+    torch.save(model.state_dict(), best_path)
+    nni.report_final_result(best_val)
+    # print(f"TESTING: loading from {best_path}")
+    # model.load_state_dict(torch.load(best_path))
     
-    print(f"TESTING: loading from {best_path}")
-    model.load_state_dict(torch.load(best_path))
-    
-    model.eval()
-    with torch.no_grad():
-        loss, acc, confusion = loop(model, test_loader, name="test")
-    print(f'TEST loss: {loss:.4f} acc: {acc:.4f}')
-    wandb.log({"test_loss":loss,
-                "test_acc":acc})
-    print_confusion(confusion,lookup=lookup)
+    # model.eval()
+    # with torch.no_grad():
+    #     loss, acc, confusion = loop(model, test_loader, name="test")
+    # print(f'TEST loss: {loss:.4f} acc: {acc:.4f}')
+    # if(args.wandb):
+    #     wandb.log({"test_loss":loss,
+    #                 "test_acc":acc})
+    # print_confusion(confusion,lookup=lookup)
 
 def test_perplexity(model, dataset):
     model.eval()
@@ -207,8 +223,9 @@ def loop(model, dataloader, optimizer=None, name='train'):
         if name == 'test':
             confusion += confusion_matrix(true, pred, labels=range(20))
         else:
-            wandb.log({"{}_step_loss".format(name):(total_loss / total_count),
-                "{}_step_acc".format(name):(total_correct / total_count)})
+            if(args.wandb):
+                wandb.log({"{}_step_loss".format(name):(total_loss / total_count),
+                    "{}_step_acc".format(name):(total_correct / total_count)})
         t.set_description("%.5f" % float(total_loss/total_count))
         
         torch.cuda.empty_cache()

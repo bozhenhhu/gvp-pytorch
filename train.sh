@@ -1,6 +1,13 @@
-export CUDA_VISIBLE_DEVICES=7
-
-python run_cpd.py --train\
+CUDA_VISIBLE_DEVICES=7 python run_cpd.py --train\
     --wandb\
-    --experiment_name "train0" --wandb_project GVP --wandb_entity bozhen\
-    --v 100
+    --experiment_name "train_v30" --wandb_project GVP --wandb_entity bozhen\
+    --v 30. --epochs 100 & CUDA_VISIBLE_DEVICES=6 python run_cpd.py --train\
+    --wandb\
+    --experiment_name "train_v100" --wandb_project GVP --wandb_entity bozhen\
+    --v 100. --epochs 100 & CUDA_VISIBLE_DEVICES=5 python run_cpd.py --train\
+    --wandb\
+    --experiment_name "train_v50" --wandb_project GVP --wandb_entity bozhen\
+    --v 50. --epochs 100 & CUDA_VISIBLE_DEVICES=4 python run_cpd.py --train\
+    --wandb\
+    --experiment_name "train_v0.1" --wandb_project GVP --wandb_entity bozhen\
+    --v 0.1 --epochs 100

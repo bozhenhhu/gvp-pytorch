@@ -6,6 +6,7 @@ import torch.utils.data as data
 import torch.nn.functional as F
 import torch_geometric
 import torch_cluster
+import scipy 
 
 def _normalize(tensor, dim=-1):
     '''
@@ -32,15 +33,17 @@ def _rbf(D, D_min=0., D_max=20., D_count=16, device='cpu'):
     RBF = torch.exp(-((D_expand - D_mu) / D_sigma) ** 2)
     return RBF
 
-def _t_continuity(D, D_min=0., D_max=20., D_count=16, device='cpu', v=100):
-    print('v')
+def _t_continuity(D, D_min=0., D_max=20., D_count=16, device='cpu', v=100, gamma=1):
+    
+    # print('v')
     D_mu = torch.linspace(D_min, D_max, D_count, device=device)
     D_mu = D_mu.view([1, -1])
     D_sigma = (D_max - D_min) / D_count
     D_expand = torch.unsqueeze(D, -1) 
-    D_expand = (D_expand - D_mu) / (D_sigma * v)
-    P = torch.pow((1 + D_expand ),
-                -1 * (v + 1)
+    D_expand = (D_expand - D_mu) ** 2 / (D_sigma * v)
+    P = torch.pow(gamma * torch.pow((1 + D_expand ),
+                -1 * (v + 1) / 2) * torch.sqrt(2 * 3.14),
+                2
             )
     return P
 
@@ -162,12 +165,19 @@ class ProteinGraphDataset(data.Dataset):
         self.node_counts = [len(e['seq']) for e in data_list]
         # self.top_k ={e['name']:len(e['seq']) for e in data_list}
         self.v = v
+        self.gamma = self._CalGamma(v)
 
         self.letter_to_num = {'C': 4, 'D': 3, 'S': 15, 'Q': 5, 'K': 11, 'I': 9,
                        'P': 14, 'T': 16, 'F': 13, 'A': 0, 'G': 7, 'H': 8,
                        'E': 6, 'L': 10, 'R': 1, 'W': 17, 'V': 19, 
                        'N': 2, 'Y': 18, 'M': 12}
         self.num_to_letter = {v:k for k, v in self.letter_to_num.items()}
+
+    def _CalGamma(self, v):
+        a = scipy.special.gamma((v + 1) / 2)
+        b = np.sqrt(v * np.pi) * scipy.special.gamma(v / 2)
+        out = a / b
+        return out
         
     def __len__(self): return len(self.data_list)
     
@@ -191,8 +201,8 @@ class ProteinGraphDataset(data.Dataset):
 
             pos_embeddings = self._positional_embeddings(edge_index)
             E_vectors = X_ca[edge_index[0]] - X_ca[edge_index[1]]
-            rbf = _rbf(E_vectors.norm(dim=-1), D_count=self.num_rbf, device=self.device)
-            # rbf = _t_continuity(E_vectors.norm(dim=-1), D_count=self.num_rbf, device=self.device, v=self.v)
+            # rbf = _rbf(E_vectors.norm(dim=-1), D_count=self.num_rbf, device=self.device)
+            rbf = _t_continuity(E_vectors.norm(dim=-1), D_count=self.num_rbf, device=self.device, v=self.v, gamma=self.gamma)
 
             dihedrals = self._dihedrals(coords)                     
             orientations = self._orientations(X_ca)

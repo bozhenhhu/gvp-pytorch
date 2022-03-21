@@ -1,7 +1,7 @@
 import argparse
 
 import wandb
-import nni
+# import nni
 parser = argparse.ArgumentParser()
 parser.add_argument('--models-dir', metavar='PATH', default='./models/',
                     help='directory to save trained models, default=./models/')
@@ -17,7 +17,7 @@ parser.add_argument('--cath-splits', metavar='PATH', default='./data/chain_set_s
                     help='location of CATH split file, default=./data/chain_set_splits.json')
 parser.add_argument('--ts50', metavar='PATH', default='./data/ts50.json',
                     help='location of TS50 dataset, default=./data/ts50.json')
-parser.add_argument('--train', action="store_true", default=False,
+parser.add_argument('--train', action="store_true",
                     help="train a model")
 parser.add_argument('--test-r', metavar='PATH', default=None,
                     help='evaluate a trained model on recovery (without training)')
@@ -47,7 +47,7 @@ parser.add_argument(
 )
 
 parser.add_argument(
-    "--v", type=int, default=100,
+    "--v", type=float, default=100.,
 )
 args = parser.parse_args()
 config = parser.parse_args().__dict__
@@ -55,10 +55,10 @@ config = parser.parse_args().__dict__
 assert sum(map(bool, [args.train, args.test_p, args.test_r])) == 1, \
     "Specify exactly one of --train, --test_r, --test_p"
 
-tuner_params = nni.get_next_parameter() 
-config.update(tuner_params)
-import argparse
-args = argparse.Namespace(**config)
+# tuner_params = nni.get_next_parameter() 
+# config.update(tuner_params)
+# import argparse
+# args = argparse.Namespace(**config)
 
 import torch
 import torch.nn as nn
@@ -154,19 +154,20 @@ def train(model, trainset, valset, testset):
             best_path, best_val = path, loss
             # torch.save(model.state_dict(), best_path)
             print(f'BEST {best_path} VAL loss: {best_val:.4f}')
+    print("save best model")
     torch.save(model.state_dict(), best_path)
-    nni.report_final_result(best_val)
-    # print(f"TESTING: loading from {best_path}")
-    # model.load_state_dict(torch.load(best_path))
+    # nni.report_final_result(best_val)
+    print(f"TESTING: loading from {best_path}")
+    model.load_state_dict(torch.load(best_path))
     
-    # model.eval()
-    # with torch.no_grad():
-    #     loss, acc, confusion = loop(model, test_loader, name="test")
-    # print(f'TEST loss: {loss:.4f} acc: {acc:.4f}')
-    # if(args.wandb):
-    #     wandb.log({"test_loss":loss,
-    #                 "test_acc":acc})
-    # print_confusion(confusion,lookup=lookup)
+    model.eval()
+    with torch.no_grad():
+        loss, acc, confusion = loop(model, test_loader, name="test")
+    print(f'TEST loss: {loss:.4f} acc: {acc:.4f}')
+    if(args.wandb):
+        wandb.log({"test_loss":loss,
+                    "test_acc":acc})
+    print_confusion(confusion,lookup=lookup)
 
 def test_perplexity(model, dataset):
     model.eval()

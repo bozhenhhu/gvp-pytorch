@@ -135,7 +135,7 @@ def train(model, trainset, valset, testset):
         loss, acc, _ = loop(model, train_loader, optimizer=optimizer, name="train")
         print(f'EPOCH {epoch} TRAIN loss: {loss:.4f} acc: {acc:.4f}')
         # if epoch % 5 == 0: #reduce training time
-        path = f"{args.models_dir}/{model_id}_{epoch}.pt"
+        path = f"{args.models_dir}/{model_id}_{epoch}_v{args.v}.pt"
         # torch.save(model.state_dict(), path)
         # print_confusion(confusion, lookup=lookup)
         if(args.wandb):

@@ -42,7 +42,7 @@ def _t_continuity(D, D_min=0., D_max=20., D_count=16, device='cpu', v=100, gamma
     D_expand = torch.unsqueeze(D, -1) 
     D_expand = (D_expand - D_mu) ** 2 / (D_sigma * v)
     P = torch.pow(gamma * torch.pow((1 + D_expand ),
-                -1 * (v + 1) / 2) * torch.sqrt(2 * 3.14),
+                -1 * (v + 1) / 2) * torch.sqrt(torch.tensor(2 * 3.14), device=device),
                 2
             )
     return P

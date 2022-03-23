@@ -2,5 +2,8 @@
 !.launch.json
 !.gitignore
 data
-models
-wandb
+models/
+wandb/
+best_models/
+debug.log
+debug-internal.log

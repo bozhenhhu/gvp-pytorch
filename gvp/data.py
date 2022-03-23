@@ -6,6 +6,7 @@ import torch.utils.data as data
 import torch.nn.functional as F
 import torch_geometric
 import torch_cluster
+import scipy 
 
 def _normalize(tensor, dim=-1):
     '''
@@ -23,6 +24,7 @@ def _rbf(D, D_min=0., D_max=20., D_count=16, device='cpu'):
     That is, if `D` has shape [...dims], then the returned tensor will have
     shape [...dims, D_count].
     '''
+    # print('rbf')
     D_mu = torch.linspace(D_min, D_max, D_count, device=device)
     D_mu = D_mu.view([1, -1])
     D_sigma = (D_max - D_min) / D_count
@@ -31,6 +33,45 @@ def _rbf(D, D_min=0., D_max=20., D_count=16, device='cpu'):
     RBF = torch.exp(-((D_expand - D_mu) / D_sigma) ** 2)
     return RBF
 
+def _t_continuity(D, D_min=0., D_max=20., D_count=16, device='cpu', v=100, gamma=1):
+    
+    # print('v')
+    D_mu = torch.linspace(D_min, D_max, D_count, device=device)
+    D_mu = D_mu.view([1, -1])
+    D_sigma = (D_max - D_min) / D_count
+    D_expand = torch.unsqueeze(D, -1) 
+    D_expand = (D_expand - D_mu) ** 2 / (D_sigma * v)
+    P = torch.pow(gamma * torch.pow((1 + D_expand ),
+                -1 * (v + 1) / 2) * torch.sqrt(torch.tensor(2 * 3.14), device=device),
+                2
+            )
+    return P
+
+
+def _sprof(D, D0, distance_type="norm"):
+    """ Pairwise euclidean distances """
+    # Convolutional network on NCHW
+    # mask [79, 75], [79, 1, 75] * [79, 75, 1] = [79, 75, 75]
+    dX = torch.unsqueeze(X,1) - torch.unsqueeze(X,2) # ([79, 75, 75, 3])
+    D = mask_2D * torch.sqrt(torch.sum(dX**2, 3) + eps) # ([79, 75, 75])
+    if distance_type == 'euclid':
+        aa = D
+    elif distance_type == 'similarity': 
+        sigma = self.sigma 
+        dist_type = self.distance_type + '_' + str(sigma) 
+        # aa = 2 / (1 + D / 4) # similarity, where d_0 is set to 4A
+        aa = 2 / (1 + D / sigma) 
+    elif distance_type == 'norm':
+        sigma = self.sigma
+        dist_type = self.distance_type + '_sigma_' + str(sigma)
+        eps = 1E-12
+        D_1 = 1 / (sigma * np.sqrt(2*np.pi))
+        # aa = D_1 * np.exp(-(D**2 / (sigma**2))/2)
+        aa = np.exp(-(D.cpu().numpy()**2 / (sigma**2))/2)
+        aa = torch.from_numpy(aa)
+    # for i in range(len(aa)):
+        #aa[i, i] = 1  
+    return aa
 
 class CATHDataset:
     '''
@@ -138,7 +179,7 @@ class ProteinGraphDataset(data.Dataset):
     '''
     def __init__(self, data_list, 
                  num_positional_embeddings=16,
-                 top_k=30, num_rbf=16, device="cpu"):
+                 top_k=30, num_rbf=16, device="cpu", v=100):
         
         super(ProteinGraphDataset, self).__init__()
         
@@ -148,13 +189,21 @@ class ProteinGraphDataset(data.Dataset):
         self.num_positional_embeddings = num_positional_embeddings
         self.device = device
         self.node_counts = [len(e['seq']) for e in data_list]
-        self.top_k ={e['name']:len(e['seq']) for e in data_list}
-        
+        # self.top_k ={e['name']:len(e['seq']) for e in data_list}
+        self.v = v
+        self.gamma = self._CalGamma(v)
+
         self.letter_to_num = {'C': 4, 'D': 3, 'S': 15, 'Q': 5, 'K': 11, 'I': 9,
                        'P': 14, 'T': 16, 'F': 13, 'A': 0, 'G': 7, 'H': 8,
                        'E': 6, 'L': 10, 'R': 1, 'W': 17, 'V': 19, 
                        'N': 2, 'Y': 18, 'M': 12}
         self.num_to_letter = {v:k for k, v in self.letter_to_num.items()}
+
+    def _CalGamma(self, v):
+        a = scipy.special.gamma((v + 1) / 2)
+        b = np.sqrt(v * np.pi) * scipy.special.gamma(v / 2)
+        out = a / b
+        return out
         
     def __len__(self): return len(self.data_list)
     
@@ -162,6 +211,8 @@ class ProteinGraphDataset(data.Dataset):
     
     def _featurize_as_graph(self, protein):
         name = protein['name']
+        # top_k = len(protein['seq']) - 1
+        top_k = self.top_k
         with torch.no_grad():
             coords = torch.as_tensor(protein['coords'], 
                                      device=self.device, dtype=torch.float32)   
@@ -172,12 +223,13 @@ class ProteinGraphDataset(data.Dataset):
             coords[~mask] = np.inf
             
             X_ca = coords[:, 1]
-            edge_index = torch_cluster.knn_graph(X_ca, k=self.top_k)
-            
+            edge_index = torch_cluster.knn_graph(X_ca, k=top_k)
+
             pos_embeddings = self._positional_embeddings(edge_index)
             E_vectors = X_ca[edge_index[0]] - X_ca[edge_index[1]]
             rbf = _rbf(E_vectors.norm(dim=-1), D_count=self.num_rbf, device=self.device)
-            
+            # rbf = _t_continuity(E_vectors.norm(dim=-1), D_count=self.num_rbf, device=self.device, v=self.v, gamma=self.gamma)
+
             dihedrals = self._dihedrals(coords)                     
             orientations = self._orientations(X_ca)
             sidechains = self._sidechains(coords)
@@ -195,6 +247,20 @@ class ProteinGraphDataset(data.Dataset):
                                          edge_s=edge_s, edge_v=edge_v,
                                          edge_index=edge_index, mask=mask)
         return data
+    
+    def _full_edge_index(self, L):
+        # |i-j| <= kmin (connect sequentially adjacent residues)
+        idx = torch.arange(0, L)
+        # idx = torch.reshape(torch.arange(0, L), (1, L))
+        sep = idx[None,:] - idx[:,None]
+        sep = sep.abs()
+        i, j = torch.where(sep > 0)
+        
+        src = L+i
+        tgt = L+j
+
+        edge_index=torch.stack([src,tgt])
+        return edge_index
                                 
     def _dihedrals(self, X, eps=1e-7):
         # From https://github.com/jingraham/neurips19-graph-protein-design

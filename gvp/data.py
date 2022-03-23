@@ -48,30 +48,27 @@ def _t_continuity(D, D_min=0., D_max=20., D_count=16, device='cpu', v=100, gamma
     return P
 
 
-def _sprof(D, D0, distance_type="norm"):
-    """ Pairwise euclidean distances """
-    # Convolutional network on NCHW
-    # mask [79, 75], [79, 1, 75] * [79, 75, 1] = [79, 75, 75]
-    dX = torch.unsqueeze(X,1) - torch.unsqueeze(X,2) # ([79, 75, 75, 3])
-    D = mask_2D * torch.sqrt(torch.sum(dX**2, 3) + eps) # ([79, 75, 75])
-    if distance_type == 'euclid':
-        aa = D
-    elif distance_type == 'similarity': 
-        sigma = self.sigma 
-        dist_type = self.distance_type + '_' + str(sigma) 
-        # aa = 2 / (1 + D / 4) # similarity, where d_0 is set to 4A
-        aa = 2 / (1 + D / sigma) 
-    elif distance_type == 'norm':
-        sigma = self.sigma
-        dist_type = self.distance_type + '_sigma_' + str(sigma)
-        eps = 1E-12
-        D_1 = 1 / (sigma * np.sqrt(2*np.pi))
-        # aa = D_1 * np.exp(-(D**2 / (sigma**2))/2)
-        aa = np.exp(-(D.cpu().numpy()**2 / (sigma**2))/2)
-        aa = torch.from_numpy(aa)
-    # for i in range(len(aa)):
-        #aa[i, i] = 1  
+def _sprof(D, D_min=0., D_max=20., D_count=16, device='cpu'):
+    # print('v')
+    D_mu = torch.linspace(D_min, D_max, D_count, device=device)
+    D_mu = D_mu.view([1, -1]).repeat(len(D),1)
+    D_sigma = (D_max - D_min) / D_count
+    D_expand = torch.unsqueeze(D, -1).repeat(1,D_count)
+    aa = 2 /(1 + torch.max(D_expand, D_mu )/ D_sigma)
+
     return aa
+
+def chi_square(D, k=4, D_min=0., D_max=20., D_count=16, device='cpu'):
+    D_mu = torch.linspace(D_min, D_max, D_count, device=device)
+    D_mu = D_mu.view([1, -1]).repeat(len(D),1)
+    D_sigma = (D_max - D_min) / D_count
+    D_expand = torch.unsqueeze(D, -1).repeat(1,D_count)
+    D_expand = torch.max(D_expand, D_mu ) / D_sigma
+
+    gamma = scipy.special.gamma(k / 2)
+    D_gamma = 1 / (np.power(2,k/2) * gamma)
+    P = D_gamma * torch.pow(D_expand,k/2 - 1) * torch.exp(-D_expand/2)
+    return P
 
 class CATHDataset:
     '''
@@ -184,12 +181,11 @@ class ProteinGraphDataset(data.Dataset):
         super(ProteinGraphDataset, self).__init__()
         
         self.data_list = data_list
-        # self.top_k = top_k
+        self.top_k = top_k
         self.num_rbf = num_rbf
         self.num_positional_embeddings = num_positional_embeddings
         self.device = device
         self.node_counts = [len(e['seq']) for e in data_list]
-        # self.top_k ={e['name']:len(e['seq']) for e in data_list}
         self.v = v
         self.gamma = self._CalGamma(v)
 
@@ -227,8 +223,10 @@ class ProteinGraphDataset(data.Dataset):
 
             pos_embeddings = self._positional_embeddings(edge_index)
             E_vectors = X_ca[edge_index[0]] - X_ca[edge_index[1]]
-            rbf = _rbf(E_vectors.norm(dim=-1), D_count=self.num_rbf, device=self.device)
+            # rbf = _rbf(E_vectors.norm(dim=-1), D_count=self.num_rbf, device=self.device)
             # rbf = _t_continuity(E_vectors.norm(dim=-1), D_count=self.num_rbf, device=self.device, v=self.v, gamma=self.gamma)
+            # rbf = _sprof(E_vectors.norm(dim=-1), D_count=self.num_rbf, device=self.device)
+            rbf = chi_square(E_vectors.norm(dim=-1), D_count=self.num_rbf, device=self.device)
 
             dihedrals = self._dihedrals(coords)                     
             orientations = self._orientations(X_ca)
